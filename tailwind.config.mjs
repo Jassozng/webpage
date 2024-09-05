@@ -9,7 +9,9 @@ export default {
 	theme: {
 		extend: {
 			screens: {
+				maxxl: { max: "1000px" },
 				maxmd: { max: "768px" },
+				maxmdd: { max: "548px" },
 				maxsm: { max: "360px" },
 			}
 		},

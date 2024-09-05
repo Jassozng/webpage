@@ -2,12 +2,12 @@ import { Card, Image, CardBody} from "@nextui-org/react";
 
 const CurrentJobCard = () => {
   return (
-    <Card className="w-full basis-2/3">
-      <CardBody className="flex flex-row flex-wrap p-0 sm:flex-nowrap">
+    <Card className="w-full basis-2/3 maxmd:basis-[50%]">
+      <CardBody className="flex flex-row justify-center flex-wrap p-0 sm:flex-nowrap maxxl:flex-wrap">
         <Image
           removeWrapper
           alt="Acme Creators"
-          className="h-auto w-full flex-none object-cover object-top md:w-48"
+          className="h-auto w-full flex-none object-cover object-top md:w-48 maxmdd:w-36"
           src="/appscamelot-logo.png"
         />
 

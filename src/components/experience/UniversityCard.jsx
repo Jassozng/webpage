@@ -5,7 +5,7 @@ const UniversityCard = (props) => {
 
   return (
     <Card
-      className="overflow-none relative basis-1/3 border-small border-foreground/10 bg-[url('https://nextuipro.nyc3.cdn.digitaloceanspaces.com/components-images/abstract-dark-bg4.jpg')] bg-right-bottom"
+      className="overflow-none relative basis-1/3 maxmd:basis-[50%] border-small border-foreground/10 bg-[url('https://nextuipro.nyc3.cdn.digitaloceanspaces.com/components-images/abstract-dark-bg4.jpg')] bg-right-bottom"
     >
       <CardHeader>
         <div className="flex items-center gap-3">

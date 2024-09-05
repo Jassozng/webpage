@@ -6,19 +6,10 @@ import {
     NavbarMenu,
     NavbarMenuItem,
     NavbarMenuToggle,
-    Link,
-    Button,
-  } from "@nextui-org/react";
+    Link
+} from "@nextui-org/react";
 import useTheme from "../../hooks/useTheme";
 import { useRef } from "react";
-
-  
-  const menuItems = [
-    "Home",
-    "Experience",
-    "About me",
-    "Get in touch!",
-  ];
 
 const Nav = (props) => {
     const homeRef = useRef(null);
@@ -30,6 +21,24 @@ const Nav = (props) => {
         e.preventDefault();
         ref.current.click();
     }
+
+    const menuItems = [
+        {
+            label: "Home",
+            href: "/",
+            ref: homeRef
+        },
+        {
+            label: "Experience",
+            href: "/experience",
+            ref: experienceRef
+        },
+        {
+            label: "About me",
+            href: "/about",
+            ref: aboutRef
+        }
+    ]
 
   return (
     <Navbar
@@ -52,7 +61,7 @@ const Nav = (props) => {
             <div className="rounded-full bg-foreground text-background">
 
             </div>
-            <span className="ml-2 font-medium md:hidden">ACME</span>
+            <span className="ml-2 font-medium md:hidden">Jasso Zuñiga</span>
         </NavbarBrand>
 
         {/* Items */}
@@ -92,13 +101,16 @@ const Nav = (props) => {
                 },
             }}
         >
-        {menuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-            <Link className="w-full text-default-500" href="#" size="md">
-                {item}
-            </Link>
-            </NavbarMenuItem>
-        ))}
+        
+            {menuItems.map((item, index) => (
+                <NavbarMenuItem
+                    key={index}
+                    onClick={(e) => handleRedirect(e, item.ref)}
+                >
+                    {item.label}
+                </NavbarMenuItem>
+            ))}
+
         </NavbarMenu>
     </Navbar>
   )
