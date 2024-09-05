@@ -1,11 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
----
 
+const funFacts = [
+  "🎨 I don't really have a favorite color—I think they all have their place, and I appreciate them equally.",
+  "🎵 I'm a big music fan, and my favorite band is a rock group from Uruguay called Cuarteto de Nos.",
+  "🎮 I'm super into FPS games, and I can get pretty competitive!",
+  "📚 I'm not a huge reader for fun, but I find myself doing it anyway when I need to :p.",
+  "🧠 I love sharing what I know and learning from others. I think being able to do both is one of the most valuable skills someone can have.",
+];
+
+const quote = "Progress is owed to us, the dissatisfied.";
+---
 
 <Layout title="Jasso Zuñiga" description="Jasso's personal website">
     <section 
-        class="flex flex-col items-center justify-center gap-4"
+        class="flex flex-col justify-between gap-4 max-w-4xl mx-auto h-full"
         transition:name="content"
         transition:animate="fade"
     >
@@ -14,8 +23,18 @@ import Layout from "../layouts/Layout.astro";
             transition:name="title"
             transition:animate="initial"
         >
-            About me
+            About Me
         </h1>
+
+        <ul class="list-disc list-inside text-lg space-y-2 text-center">
+            {funFacts.map(fact => (
+                <li>{fact}</li>
+            ))}
+        </ul>
+
+        <!-- Quote Section -->
+        <blockquote class="italic text-lg text-center text-gray-600 mb-8">
+            "{quote}"
+        </blockquote>
     </section>
-    
-</L>
+</Layout>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardHeader, CardFooter, Image, Button } from "@nextui-org/react";
+import { Card, CardHeader, CardFooter, Image, Button, Link } from "@nextui-org/react";
 
 const items = [
   {
@@ -21,7 +21,7 @@ const items = [
     label: "Built with: Apps Camelot",
     sublabel: "KOAULA Marketplace web application for MOOC courses for the Virtual University of the State of Guanajuato (UVEG)",
     buttonLabel: "Take a look",
-    buttonHref: "#",
+    buttonHref: "https://koaula.uveg.edu.mx/",
     imageUrl: "/koaula-preview.png"
   }
 ];
@@ -53,7 +53,14 @@ const ProjectCard = ({ item }) => {
             <p className="text-tiny text-white/60">{item.sublabel}</p>
           </div>
         </div>
-        <Button radius="full" size="sm" href={item.buttonHref}>
+        <Button 
+          as={Link}
+          radius="full" 
+          size="sm" 
+          href={item.buttonHref}
+          target='_blank'
+          rel='noreferrer'
+        >
           {item.buttonLabel}
         </Button>
       </CardFooter>
@@ -64,14 +71,13 @@ const ProjectCard = ({ item }) => {
 const ProjectCardTwo = ({ item }) => {
   return (
     <Card isFooterBlurred className="w-full h-[300px] lg:h-[400px] xl:h-[500px] col-span-full md:col-span-6 lg:col-span-4">
-      <CardHeader className="absolute z-10 top-1 flex-col items-start">
-        <p className="text-tiny text-white/60 uppercase font-bold">{item.label}</p>
+      <CardHeader className="absolute z-10 top-1 flex-col items-start bg-[#abd3d6]/70 backdrop-blur-sm p-4 rounded-lg">
+        <p className="text-tiny text-black/60 uppercase font-bold">{item.label}</p>
         <h4 className="text-black font-medium text-2xl">{item.title}</h4>
       </CardHeader>
       <Image
-        removeWrapper
-        alt="Card example background"
-        className="z-0 w-full h-full scale-125 -translate-y-6 object-cover"
+        alt="Card project image"
+        className="z-0 w-full h-full translate-y-12 object-cover"
         src={item.imageUrl}
       />
       <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
@@ -79,7 +85,16 @@ const ProjectCardTwo = ({ item }) => {
           <p className="text-black text-tiny">{item.subtitle}</p>
           <p className="text-black text-tiny">{item.sublabel}</p>
         </div>
-        <Button className="text-tiny" color="primary" radius="full" size="sm" href={item.buttonHref}>
+        <Button 
+          as={Link}
+          className="text-tiny" 
+          color="primary" 
+          radius="full" 
+          size="sm" 
+          href={item.buttonHref}
+          target='_blank'
+          rel='noreferrer'
+        >
           {item.buttonLabel}
         </Button>
       </CardFooter>
