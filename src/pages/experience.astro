@@ -1,0 +1,44 @@
+---
+import Masonry from "../components/experience/Masonry";
+import Layout from "../layouts/Layout.astro";
+import CurrentJobCard from "../components/experience/CurrentJobCard";
+import UniversityCard from "../components/experience/UniversityCard";
+import UTLIcon from "../components/icons/UTLIcon.astro";
+import { Divider } from "@nextui-org/react";
+---
+
+
+<Layout title="Jasso Zuñiga" description="Jasso's personal website">
+    <section 
+        class="flex flex-col items-center justify-center gap-4"
+        transition:name="content"
+        transition:animate="fade"
+    >
+        <article class="flex flex-col gap-4 w-[85%]">
+            <h1
+                class="text-center text-2xl font-bold"
+            >
+                Experience
+            </h1>
+            <div class="flex gap-4">
+                <CurrentJobCard client:idle />
+                <UniversityCard>
+                    <UTLIcon slot="Icon" />
+                </UniversityCard>
+            </div>
+        </article>
+        <Divider className="my-8" />
+        <article class="flex flex-col gap-4 mb-4">
+            <h1
+                class="text-center text-2xl font-bold"
+                transition:name="title"
+                transition:animate="initial"
+            >
+                Projects
+            </h1>
+            <p class="text-center">In my experience in software development, I have had the opportunity to participate greatly in projects, these are some of the examples I can show.</p>
+            <Masonry client:idle />
+        </article>
+    </section>
+    
+</L>

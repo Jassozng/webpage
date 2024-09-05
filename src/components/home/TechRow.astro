@@ -1,0 +1,30 @@
+---
+import TechChip from "./TechChip"
+
+interface Props {
+    title: string;
+    elements: {
+        Icon: any;
+        color: string;
+    }[];
+}
+
+const { title, elements } = Astro.props;
+---
+
+<article class="flex flex-col gap-2 items-center">
+    <div class="flex items-center gap-3">
+        <p class="text-large font-medium">{ title }</p>
+    </div>
+    <ul class="grid grid-cols-3 maxmd:grid-cols-2 maxsm:grid-cols-1 gap-4">
+        {
+            elements.map(({ Icon, color }) => (
+                <li>
+                    <TechChip color={color}>
+                        <Icon size={20} fill="#ffff" slot='icon' />
+                    </T>
+                </li>
+            ))
+        }
+    </ul>
+</article>

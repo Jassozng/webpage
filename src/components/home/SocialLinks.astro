@@ -1,0 +1,16 @@
+---
+import { SOCIAL_LINKS } from "../../constants/social"
+import LinkButton from "./LinkButton"
+---
+
+<ul class="flex gap-4 items-center justify-center maxmd:grid maxmd:grid-cols-2">
+    {
+        SOCIAL_LINKS.map(({ name, url, Icon }) => (
+        <li>
+            <LinkButton url={url} name={name} client:load >
+                <Icon slot="icon" />
+            </LinkButton>
+        </li>
+        ))
+    }
+</ul>
