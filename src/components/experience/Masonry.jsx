@@ -60,6 +60,7 @@ const ProjectCard = ({ item }) => {
           href={item.buttonHref}
           target='_blank'
           rel='noreferrer'
+          name='project-link'
         >
           {item.buttonLabel}
         </Button>
@@ -94,6 +95,7 @@ const ProjectCardTwo = ({ item }) => {
           href={item.buttonHref}
           target='_blank'
           rel='noreferrer'
+          name='project-link'
         >
           {item.buttonLabel}
         </Button>

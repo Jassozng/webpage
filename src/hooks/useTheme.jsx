@@ -39,7 +39,8 @@ const useTheme = () => {
         return (
             <Button 
                 radius="full" 
-                variant="flat" 
+                variant="flat"
+                name="theme-switch" 
                 color={theme === DARK ? "primary" : "foreground"}
                 startContent={!theme ? null : theme === DARK ? <MoonIcon /> : <SunIcon />} 
                 onPress={() => toggleTheme()}

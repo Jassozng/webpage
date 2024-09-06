@@ -1,4 +1,7 @@
 ---
+import HomeIcon from '../components/icons/Home.astro';
+import RocketIcon from '../components/icons/Rocket.astro';
+import AboutIcon from '../components/icons/About.astro';
 import BaseHead from '../components/layout/BaseHead.astro';
 import Nav from '../components/layout/Nav';
 interface Props {
@@ -7,6 +10,7 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+const currentPath = Astro.url.pathname;
 ---
 
 <script is:inline>
@@ -27,7 +31,11 @@ const { title, description } = Astro.props;
 	</head>
 	<body>
 		<header transition:animate="none">
-			<Nav client:load></Nav>
+			<Nav currentPath={currentPath} client:load>
+				<HomeIcon slot='HomeIcon' />
+				<RocketIcon slot='RocketIcon' />
+				<AboutIcon slot='AboutIcon' />
+			</Nav>
 		</header>
 		<main class="w-full h-[calc(100dvh-86px)]">
 			<slot />

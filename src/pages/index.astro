@@ -9,7 +9,7 @@ import { CLOUDDEV_ICONS, WEBDEV_ICONS } from '../constants/tech';
 ---
 
 <Layout title="Jasso Zuñiga" description="Jasso's personal website">
-	<JassoCard client:visible >
+	<JassoCard client:visible>
 		<div 
 			class="pb-4 pt-12 text-center" 
 			slot="CardContent"
@@ -29,21 +29,21 @@ import { CLOUDDEV_ICONS, WEBDEV_ICONS } from '../constants/tech';
 			</p>
 			<div class="flex gap-2">
 			  <p>
-				<span class="text-small font-medium text-default-500">+ 2 years</span>&nbsp;
-				<span class="text-small text-default-400">of experience in software development and maintenance (SaaS / Custom Software)</span>
+				<span class="text-small font-medium text-default-500">+2 years</span>
+				<span class="text-small text-default-400">of experience in software development and maintenance (SaaS / SaaP)</span>
 			  </p>
 			</div>
 			<div class="flex gap-2">
 				<p>
-					<span class="text-small font-medium text-default-500">Web, mobile and cloud</span>&nbsp;
+					<span class="text-small font-medium text-default-500">Web, mobile and cloud</span>
 					<span class="text-small text-default-400">development experience with published and in-use products 🚀</span>
 				</p>
 			</div>
 			<div class="flex gap-2 pb-1 pt-2 justify-center">
 				<TechRow elements={WEBDEV_ICONS} title='Web' />
-				<Divider orientation="vertical" className='mx-4' />
+				<Divider orientation="vertical" className='mx-4' client:idle />
 				<TechRow elements={MOBILEDEV_ICONS} title='Mobile' />
-				<Divider orientation="vertical" className='mx-4' />
+				<Divider orientation="vertical" className='mx-4' client:idle />
 				<TechRow elements={CLOUDDEV_ICONS} title='Cloud' />
 			</div>
 		</div>

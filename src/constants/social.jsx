@@ -22,6 +22,6 @@ export const SOCIAL_LINKS = [
     {
         name: "Mail",
         Icon: Mail,
-        url: "mailto:jassozng@gmail.com"
+        url: "mailto:contact@jassozng.dev"
     }
 ]
